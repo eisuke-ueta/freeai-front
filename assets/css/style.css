@@ -1,0 +1,37 @@
+body {
+  margin: 0 auto;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+a,
+p,
+span,
+small,
+caption,
+input {
+  font-family: Helvetica Neue, Helvetica, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: #303133
+}
+body, div, a, p, input {
+  color: #606266
+}
+small, caption {
+  color: #909399
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
