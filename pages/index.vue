@@ -17,13 +17,13 @@ div
           i(class="el-icon-upload")
           div(class="pa2") Drag & drop files anywhere on the page to upload
         small Files stay private. Automatically deleted after 2 hours. Free service for documents up to 50 pages or 50 Mb and 3 tasks per hour. PRO service for documents up to 100 pages
-  section(v-if="imageUrl")
+  section(v-if="imageUrl" v-loading="loading")
     el-row(class="text-center mb4")
       el-col(:xs="24" class="box-container")
-        div(class="box ma2")
+        div(class="box ma2 light-shadow")
           el-image(:src="imageUrl" lazy)
         div(class="box ma2")
-          el-input(class="mb2" type="textarea" :rows="15" v-model="imageText")
+          el-input(class="mb2" type="textarea" :rows="20" v-model="imageText")
             el-button(size="small") Copy
           div(class="text-right")
               el-button(size="small") Copy
@@ -72,12 +72,13 @@ export default {
   data() {
     return {
       imageUrl: '',
-      imageText: ''
+      imageText: '',
+      loading: false
     }
   },
   methods: {
     async onFileUpload(res, file, fileList) {
-      const response = await this.uploadImage({ form: { file: file.raw } })
+      let response = await this.uploadImage({ form: { file: file.raw } })
       if (response.status !== 200) {
         console.log(response)
         return
@@ -85,10 +86,20 @@ export default {
 
       const urls = response.data.urls
       if (urls.length === 0) return
-
       this.imageUrl = urls[0]
+
+      this.loading = true
+      response = await this.ocrImage({ form: { image_url: this.imageUrl } })
+      if (response.status !== 200) {
+        console.log(response)
+        this.loading = false
+        return
+      }
+
+      this.imageText = response.data.text
+      this.loading = false
     },
-    ...mapActions('file', ['uploadImage'])
+    ...mapActions('file', ['uploadImage', 'ocrImage'])
   }
 }
 </script>
@@ -102,7 +113,7 @@ export default {
 }
 .box {
   height: auto;
-  max-width: 400px;
+  max-width: 450px;
   width: 100%;
   vertical-align: top;
   display: inline-block;

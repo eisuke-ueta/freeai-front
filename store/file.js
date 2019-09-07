@@ -14,5 +14,14 @@ export const actions = {
     }
 
     return this.$axios.post('files/upload', formData, config)
+  },
+  ocrImage({ commit }, { form }) {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+
+    return this.$axios.post('files/ocr', form, config)
   }
 }
