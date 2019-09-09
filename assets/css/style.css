@@ -38,3 +38,42 @@ small, caption {
 .light-shadow {
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1)
 }
+.float-right {
+  float: right !important;
+}
+
+/* BORDER */
+.border-solid {
+  border-top: 1px solid #eee;
+}
+.border-dashed {
+  border-top: 1px dashed #eee;
+}
+
+/* RADIUS */
+.no-radius {
+  border-radius: 0px
+}
+.small-radius {
+  border-radius: 2px
+}
+.large-radius {
+  border-radius: 4px
+}
+.round-radius {
+  border-radius: 30px
+}
+
+/* COLOR */
+.bg-color-grey-extra-light {
+  background-color: #F2F6FC;
+}
+.bg-color-grey-lighter {
+  background-color: #EBEEF5;
+}
+.bg-color-grey-light {
+  background-color: #E4E7ED;
+}
+.bg-color-grey-base {
+  background-color: #DCDFE6;
+}

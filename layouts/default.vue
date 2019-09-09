@@ -1,22 +1,24 @@
 <template lang="pug">
 el-container
   el-header
-    el-menu(default-active="top" mode="horizontal")
-      el-menu-item(index="top") freeai
-      el-menu-item(index="ai-ocr") PDF
+    el-menu(mode="horizontal" @select="handleSelect")
+      el-menu-item(index="/")
+        span(class="header-title") freeai
+      el-menu-item(class="float-right" index="signup") サインアップ
+      el-menu-item(class="float-right" index="login") ログイン
   el-main
     nuxt
-  el-footer(class="footer pa4")
+  el-footer
     el-row(:gutter="10")
       el-col(class="mb3" :xs="24" :sm="8")
-        small &copy;2019 - Sudachi
+        small &copy;2019 - Eisuke Ueta
       el-col(class="mb3" :xs="24" :sm="8")
         div(class="mb1")
-          el-link(href="https://www.google.com/") Contact
+          el-link(href="/contact") お問い合わせ
         div(class="mb1")
-          el-link(href="https://www.google.com/") Terms of Use
+          el-link(href="/terms") 利用規約
         div(class="mb1")
-          el-link(href="https://www.google.com/") Privacy policy
+          el-link(href="/privacy") プライバシーポリシー
       el-col(class="mb3" :xs="24" :sm="8")
         div(class="mb1")
           el-link(href="https://www.google.com/") Twitter
@@ -35,12 +37,27 @@ export default {
     linkToHome() {
       this.$router.push('/')
     },
-    handleLogout() {}
+    handleLogout() {},
+    handleSelect(key, keyPath) {
+      this.$router.push(key)
+    }
   }
 }
 </script>
 
 <style>
+.header-title {
+  font-size: 1.5rem;
+}
+.el-header {
+  padding: 0;
+}
+.el-menu {
+  padding: 0 2rem;
+}
+.el-main {
+  padding: 0;
+}
 .el-footer {
   height: auto !important;
   padding: 2rem;
