@@ -1,5 +1,5 @@
 <template lang="pug">
-div(class="container")
+div
   section
     el-row(type="flex" justify="center" class="text-center")
       el-col(:xs="24" :sm="18" :md="12")
@@ -10,7 +10,7 @@ div(class="container")
       el-col(:xs="24" :sm="18" :md="12")
         el-upload(
           class="mb2"
-          drag 
+          drag
           :multiple="false"
           accept="image/png,image/jpeg"
           action="#"
@@ -103,9 +103,6 @@ export default {
 <style scoped>
 section {
   padding: 2rem;
-}
-.text-center {
-  text-align: center;
 }
 .box-container {
   vertical-align: top;

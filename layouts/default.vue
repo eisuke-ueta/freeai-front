@@ -4,6 +4,8 @@ el-container
     el-menu(mode="horizontal" @select="handleSelect")
       el-menu-item(index="/")
         span(class="header-title") freeai
+      el-menu-item(index="pdf") PDF
+      el-menu-item(class="float-right" index="settings") 設定
       el-menu-item(class="float-right" index="signup") サインアップ
       el-menu-item(class="float-right" index="login") ログイン
   el-main
@@ -53,14 +55,19 @@ export default {
   padding: 0;
 }
 .el-menu {
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
 .el-main {
   padding: 0;
+  margin-bottom: 150px;
 }
 .el-footer {
-  height: auto !important;
   padding: 2rem;
   background-color: #ebeef5;
+  position: absolute;
+  height: 150px !important;
+  width: 100%;
+  bottom: 0;
+  margin: 0 auto;
 }
 </style>

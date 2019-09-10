@@ -1,3 +1,7 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
 body {
   margin: 0 auto;
 }
@@ -40,6 +44,14 @@ small, caption {
 }
 .float-right {
   float: right !important;
+}
+
+/* CUSTOMIZE EL COMPONENT */
+.el-button.block {
+  width: 100%;
+}
+.el-link {
+  font-size: 80%;
 }
 
 /* BORDER */
