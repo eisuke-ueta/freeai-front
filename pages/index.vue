@@ -22,7 +22,7 @@ div
   section(v-if="imageUrl" v-loading="loading")
     el-row(class="text-center mb4")
       el-col(:xs="24" class="box-container")
-        div(class="box ma2 light-shadow")
+        div(class="box ma2 border-solid")
           el-image(:src="imageUrl" lazy)
         div(class="box ma2")
           el-input(class="mb2" type="textarea" :rows="20" v-model="imageText")

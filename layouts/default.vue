@@ -14,14 +14,14 @@ el-container
     el-row(:gutter="10")
       el-col(class="mb3" :xs="24" :sm="8")
         small &copy;2019 - Eisuke Ueta
-      el-col(class="mb3" :xs="24" :sm="8")
+      el-col(class="mb3" :xs="12" :sm="8")
         div(class="mb1")
           el-link(href="/contact") お問い合わせ
         div(class="mb1")
           el-link(href="/terms") 利用規約
         div(class="mb1")
           el-link(href="/privacy") プライバシーポリシー
-      el-col(class="mb3" :xs="24" :sm="8")
+      el-col(class="mb3" :xs="12" :sm="8")
         div(class="mb1")
           el-link(href="https://www.google.com/") Twitter
         div(class="mb1")
