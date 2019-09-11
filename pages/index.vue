@@ -27,8 +27,8 @@ div
         div(class="box ma2")
           el-input(class="mb2" type="textarea" :rows="20" v-model="imageText")
           div(class="text-right")
-              el-button(size="small") コピー
-              el-button(size="small") ダウンロード
+              el-button(size="small" @click="handleCopyText") コピー
+              el-button(size="small" @click="handleDownloadText") ダウンロード
   section(class="bg-color-grey-extra-light contact-section")
     el-row(class="text-center pa4")
       el-col
@@ -94,6 +94,18 @@ export default {
         console.log(e)
       }
       this.loading = false
+    },
+    handleCopyText() {
+      this.$copyText(this.imageText)
+    },
+    handleDownloadText() {
+      const blob = new Blob([this.imageText], {
+        type: 'text/plain'
+      })
+      const link = document.createElement('a')
+      link.href = URL.createObjectURL(blob)
+      link.download = 'freeai.txt'
+      link.click()
     },
     ...mapActions('file', ['uploadImage', 'ocrImage'])
   }
