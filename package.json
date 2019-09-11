@@ -14,13 +14,15 @@
     "test": "jest"
   },
   "dependencies": {
-    "lodash": "^4.17.15",
-    "cross-env": "^5.2.0",
-    "nuxt": "^2.4.0",
-    "element-ui": "^2.4.11",
     "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/moment": "^1.2.0",
     "@nuxtjs/pwa": "3.0.0-beta.16",
-    "@nuxtjs/moment": "^1.2.0"
+    "cross-env": "^5.2.0",
+    "element-ui": "^2.4.11",
+    "lodash": "^4.17.15",
+    "nuxt": "^2.4.0",
+    "nuxt-clipboard2": "^0.2.1",
+    "vue-clipboard2": "^0.3.1"
   },
   "devDependencies": {
     "nodemon": "^1.18.9",

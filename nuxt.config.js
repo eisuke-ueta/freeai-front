@@ -44,7 +44,8 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    ['@nuxtjs/moment', { locales: ['ja'], defaultLocale: 'ja' }]
+    ['@nuxtjs/moment', { locales: ['ja'], defaultLocale: 'ja' }],
+    'nuxt-clipboard2'
   ],
   /*
    ** Axios module configuration
